@@ -1,0 +1,43 @@
+name: Decap CMS Rate Limits
+description: >
+  Decap CMS is a client-side Git-based CMS with no proprietary REST API of its own.
+  All content operations are proxied directly to the underlying Git hosting provider
+  (GitHub, GitLab, Bitbucket, Azure, Gitea). Rate limits are therefore governed by
+  those upstream providers. Decap Turbo's database-proxy tier reduces direct Git API
+  calls, partially mitigating upstream rate limit exposure.
+url: https://decapcms.org/docs/backends-overview/
+rateLimits:
+  - name: GitHub Backend
+    description: Decap CMS uses the GitHub REST API and GraphQL API. Standard authenticated rate limits apply.
+    requestsPerHour: 5000
+    unit: requests per hour per authenticated user
+    notes: >
+      GitHub's REST API allows 5,000 requests/hour per authenticated token.
+      Decap CMS uses GitHub's GraphQL API where possible to reduce round-trips.
+      Unauthenticated requests are limited to 60/hour and not supported in production use.
+    reference: https://docs.github.com/en/rest/overview/resources-in-the-rest-api#rate-limiting
+  - name: GitLab Backend
+    description: Decap CMS uses the GitLab REST and GraphQL APIs. Default rate limits depend on hosting tier.
+    notes: >
+      GitLab.com applies rate limits per user; Decap CMS uses the GraphQL API in specific
+      scenarios to avoid hitting REST rate limits. Self-hosted GitLab instances have
+      configurable limits.
+    reference: https://docs.gitlab.com/ee/user/gitlab_com/index.html#gitlabcom-specific-rate-limits
+  - name: Bitbucket Backend
+    description: Decap CMS communicates with the Bitbucket REST API for content read/write operations.
+    notes: >
+      Bitbucket Cloud applies a default rate limit of 1,000 requests/hour per OAuth consumer.
+    reference: https://support.atlassian.com/bitbucket-cloud/docs/api-request-limits/
+  - name: Netlify Identity / Git Gateway
+    description: Netlify's Git Gateway proxies Git operations; Netlify Identity provides editor authentication.
+    notes: >
+      Netlify's free tier includes Netlify Identity for small teams. Git Gateway
+      forwards requests to the underlying Git provider and inherits its rate limits.
+    reference: https://docs.netlify.com/visitor-access/git-gateway/
+  - name: Decap Turbo Database Proxy
+    description: Decap Turbo introduces a database-proxy layer that caches Git content to reduce API call volume.
+    notes: >
+      The database proxy reduces the number of direct calls to the upstream Git provider,
+      helping teams stay within provider rate limits. No separate Decap Turbo rate limits
+      are publicly documented.
+    reference: https://decapcms.org/turbo/

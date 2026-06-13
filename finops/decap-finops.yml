@@ -1,0 +1,64 @@
+name: Decap CMS FinOps
+description: >
+  Financial operations guidance for teams adopting Decap CMS. The open-source tier is
+  free with zero licensing cost; hosting, media storage, and (optionally) Decap Turbo
+  subscriptions are the primary cost drivers.
+url: https://decapcms.org/turbo/
+costDrivers:
+  - name: CMS Software License
+    description: MIT-licensed open-source software; no licensing fee.
+    cost: 0
+    currency: USD
+    notes: The Decap CMS core is always free. No per-seat or per-site CMS license is charged.
+  - name: Decap Turbo Subscription
+    description: Optional managed cloud tier adding database-proxy, centralized auth, and collaboration features.
+    tiers:
+      - name: Starter
+        monthlyMin: 29
+        monthlyMax: 37
+        currency: USD
+        notes: Annual billing saves ~22%. Covers 1 project and up to 3 users.
+      - name: Team
+        monthlyMin: 89
+        monthlyMax: 112
+        currency: USD
+        notes: Annual billing saves ~21%. Covers 3 projects and up to 9 users.
+      - name: Business
+        monthlyMin: 299
+        monthlyMax: 374
+        currency: USD
+        notes: Annual billing saves ~20%. Covers 10 projects and up to 30 users.
+  - name: Hosting (Static Site)
+    description: Cost of hosting the static site and CMS admin UI.
+    notes: >
+      Netlify, Vercel, Cloudflare Pages, and GitHub Pages offer generous free tiers for
+      static hosting. Self-hosted solutions incur server costs. Typically $0–$20/month
+      for small to mid-size sites on managed platforms.
+    cost: variable
+  - name: Media Storage
+    description: Cost of storing uploaded media assets depending on provider.
+    options:
+      - name: Local / Git-tracked media
+        cost: 0
+        notes: Assets committed to the Git repo; limited by repo size and Git LFS quotas.
+      - name: Cloudinary
+        notes: Cloudinary free tier includes 25 GB storage + 25 GB monthly bandwidth. Paid plans start at ~$89/month.
+        reference: https://cloudinary.com/pricing
+      - name: Netlify Large Media
+        notes: Powered by Git LFS via Netlify; costs depend on Netlify plan storage quotas.
+        reference: https://www.netlify.com/pricing/
+      - name: Uploadcare
+        notes: Uploadcare free tier includes 3 GB storage. Paid plans start at $26/month.
+        reference: https://uploadcare.com/pricing/
+  - name: Authentication (Netlify Identity)
+    description: If using Netlify Identity for editor login, cost rolls into Netlify hosting plan.
+    notes: >
+      Netlify Identity supports up to 1,000 active users on the free tier. The Pro plan
+      ($19/month) extends this. Git Gateway is free as part of Netlify's platform.
+    reference: https://www.netlify.com/pricing/
+optimizationTips:
+  - Use annual billing for Decap Turbo to save approximately 20–22% versus monthly.
+  - Self-host the CMS admin on a free static hosting platform (Netlify, Vercel, GitHub Pages) to eliminate hosting costs.
+  - Store media in Git (for small sites) or use Cloudinary's free tier to avoid media storage fees.
+  - Use the open-source tier for single-developer or small sites; upgrade to Turbo only when team collaboration or performance is needed.
+  - Additional Turbo user seats ($9/user/month) and projects ($19/project/month) are available as add-ons rather than requiring a plan upgrade.

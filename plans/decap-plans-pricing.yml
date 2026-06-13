@@ -1,0 +1,92 @@
+name: Decap CMS Plans and Pricing
+description: Pricing plans for Decap CMS and Decap Turbo, the managed cloud tier built on top of the open-source Git-based headless CMS.
+url: https://decapcms.org/turbo/
+plans:
+  - name: Decap CMS (Open Source)
+    description: Free, self-hosted, MIT-licensed open-source CMS with full Git-based editorial workflow.
+    price: 0
+    currency: USD
+    billingPeriod: free
+    features:
+      - Git-based content workflow
+      - Editorial workflow (draft, review, publish)
+      - Folder and file collections
+      - Custom widgets and previews
+      - GitHub, GitLab, Bitbucket, Azure, Gitea backends
+      - Cloudinary, Netlify Large Media, Uploadcare media support
+      - i18n support
+      - Community Discord support
+      - MIT license — self-hosted
+    limits:
+      users: unlimited (self-managed)
+      projects: unlimited (self-managed)
+  - name: Decap Turbo Starter
+    description: Managed Decap Turbo tier for small teams needing database-proxy performance and centralized auth.
+    price: 37
+    pricingAnnual: 29
+    currency: USD
+    billingPeriod: monthly
+    annualTotal: 348
+    features:
+      - Everything in open-source tier
+      - Database-proxy performance boost
+      - Centralized authentication
+      - Up to 3 users
+      - 1 project
+    limits:
+      users: 3
+      projects: 1
+    addOns:
+      - name: Additional user seat
+        price: 9
+        unit: per user per month
+      - name: Additional project
+        price: 19
+        unit: per project per month
+  - name: Decap Turbo Team
+    description: Most popular managed tier for growing teams with collaboration features.
+    price: 112
+    pricingAnnual: 89
+    currency: USD
+    billingPeriod: monthly
+    annualTotal: 1068
+    features:
+      - Everything in Starter
+      - User roles and permissions
+      - Real-time editing visibility (presence indicators)
+      - Secrets storage
+      - Up to 9 users
+      - 3 projects
+    limits:
+      users: 9
+      projects: 3
+    addOns:
+      - name: Additional user seat
+        price: 9
+        unit: per user per month
+      - name: Additional project
+        price: 19
+        unit: per project per month
+  - name: Decap Turbo Business
+    description: Enterprise-grade managed tier with dedicated account management and priority support.
+    price: 374
+    pricingAnnual: 299
+    currency: USD
+    billingPeriod: monthly
+    annualTotal: 3588
+    features:
+      - Everything in Team
+      - Priority support
+      - Dedicated account manager
+      - Up to 30 users
+      - 10 projects
+    limits:
+      users: 30
+      projects: 10
+    addOns:
+      - name: Additional user seat
+        price: 9
+        unit: per user per month
+      - name: Additional project
+        price: 19
+        unit: per project per month
