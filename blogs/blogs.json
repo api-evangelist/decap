@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "source": "https://decapcms.org/blog/",
+    "fetched": "2026-06-13",
+    "provider": "decap",
+    "total": 15
+  },
+  "blogs": [
+    {
+      "title": "Announcing Decap Turbo",
+      "url": "https://decapcms.org/blog/announcing-decap-turbo/",
+      "date": "2026-05-05",
+      "description": "Introduces a new SaaS upgrade offering CMS performance, centralized authentication, and granular permissions."
+    },
+    {
+      "title": "Richtext Widget Replaces the Markdown Widget",
+      "url": "https://decapcms.org/blog/richtext-widget-replaces-markdown-widget/",
+      "date": "2026-04-16",
+      "description": "Describes a new richtext widget built on Plate editor, with the markdown widget being deprecated."
+    },
+    {
+      "title": "Decap CMS Website Migrated to Hugo",
+      "url": "https://decapcms.org/blog/gatsby-to-hugo-migration/",
+      "date": "2025-10-06",
+      "description": "Reports migration from Gatsby to Hugo, improving build times and maintainability."
+    },
+    {
+      "title": "You can now sponsor Decap CMS",
+      "url": "https://decapcms.org/blog/sponsor/",
+      "date": "2024-03-15",
+      "description": "Invites financial support through GitHub Sponsors or Open Collective."
+    },
+    {
+      "title": "Improved Documentation: Beta Features and Add to Your Site",
+      "url": "https://decapcms.org/blog/improved-documentation-beta-features-and-add-to-your-site/",
+      "date": "2024-02-12",
+      "description": "Documentation reorganization moving beta features and improving navigation."
+    },
+    {
+      "title": "New Gatsby plugin for Decap is now available",
+      "url": "https://decapcms.org/blog/new-gatsby-plugin-for-decap-is-now-available/",
+      "date": "2024-02-05",
+      "description": "Announces gatsby-plugin-decap-cms replacing the deprecated netlify-cms plugin."
+    },
+    {
+      "title": "Decap 3.1",
+      "url": "https://decapcms.org/blog/decap-3-1/",
+      "date": "2024-02-01",
+      "description": "Minor release featuring React 18 support and various patches."
+    },
+    {
+      "title": "Git-Based CMS: Definition, Features, Best Practices",
+      "url": "https://decapcms.org/blog/git-based-cms-definition-features-best-practices/",
+      "date": "2023-11-15",
+      "description": "Educational article on git-based CMS concepts and implementation guidance."
+    },
+    {
+      "title": "Decap 3.1.0-beta.0",
+      "url": "https://decapcms.org/blog/decap-3-1-0-beta-0/",
+      "date": "2023-10-24",
+      "description": "Beta release introducing React 18 compatibility."
+    },
+    {
+      "title": "Decap 3.0 is now available",
+      "url": "https://decapcms.org/blog/decap-3/",
+      "date": "2023-08-23",
+      "description": "First official release under the Decap CMS rebranded name."
+    },
+    {
+      "title": "Decap Receives Software Reviews Gold Medal for 2023",
+      "url": "https://decapcms.org/blog/software-reviews-gold-medal-2023/",
+      "date": "2023-05-15",
+      "description": "Recognition as a top content marketing tool in industry awards."
+    },
+    {
+      "title": "March 2023 Status Update",
+      "url": "https://decapcms.org/blog/march-23-status-update/",
+      "date": "2023-03-31",
+      "description": "Development progress update on Slate updates and test improvements."
+    },
+    {
+      "title": "GitHub Discussions is now the official Decap forum",
+      "url": "https://decapcms.org/blog/github-discussions/",
+      "date": "2023-03-09",
+      "description": "Community forum migration from Netlify Answers to GitHub Discussions."
+    },
+    {
+      "title": "Moving to Discord",
+      "url": "https://decapcms.org/blog/moving-to-discord/",
+      "date": "2023-03-01",
+      "description": "Announcement of community chat platform migration from Slack."
+    },
+    {
+      "title": "Introducing Decap CMS",
+      "url": "https://decapcms.org/blog/introducing-decap/",
+      "date": "2023-02-23",
+      "description": "Introduces Decap CMS as a rebranded, open-source, Git-based content management system."
+    }
+  ]
+}

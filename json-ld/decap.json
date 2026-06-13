@@ -1,0 +1,87 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://decapcms.org/",
+  "name": "Decap CMS",
+  "alternateName": "Netlify CMS",
+  "description": "Decap CMS (formerly Netlify CMS) is an open-source, Git-based headless content management system for static site generators and modern frontend frameworks. It provides a web-based editorial UI for managing content stored directly in Git repositories.",
+  "url": "https://decapcms.org/",
+  "applicationCategory": "Content Management System",
+  "applicationSubCategory": "Headless CMS",
+  "operatingSystem": "Any",
+  "softwareVersion": "3.1",
+  "license": "https://github.com/decaporg/decap-cms/blob/main/LICENSE",
+  "codeRepository": "https://github.com/decaporg/decap-cms",
+  "downloadUrl": "https://github.com/decaporg/decap-cms/releases",
+  "sameAs": [
+    "https://github.com/decaporg/decap-cms",
+    "https://x.com/Decap_CMS"
+  ],
+  "keywords": [
+    "CMS",
+    "Headless CMS",
+    "Git-based CMS",
+    "Content Management",
+    "Static Site Generator",
+    "JAMstack",
+    "Open Source",
+    "Editorial Workflow"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Open-source, free to self-host. Decap Turbo offers a managed cloud tier.",
+    "url": "https://decapcms.org/turbo/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Decap CMS Contributors",
+    "url": "https://github.com/decaporg"
+  },
+  "maintainer": {
+    "@type": "Organization",
+    "name": "Decap CMS",
+    "url": "https://decapcms.org/"
+  },
+  "featureList": [
+    "Git-based content storage",
+    "Web-based editorial UI",
+    "GitHub, GitLab, Bitbucket, Azure, Gitea backends",
+    "Rich-text editing",
+    "Editorial workflow (draft/review/publish)",
+    "Media file management",
+    "i18n support",
+    "Custom widgets",
+    "Collection types",
+    "Authentication backends"
+  ],
+  "documentation": "https://decapcms.org/docs/",
+  "releaseNotes": "https://github.com/decaporg/decap-cms/releases",
+  "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Announcing Decap Turbo",
+      "url": "https://decapcms.org/blog/announcing-decap-turbo/",
+      "datePublished": "2026-05-05"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Richtext Widget Replaces the Markdown Widget",
+      "url": "https://decapcms.org/blog/richtext-widget-replaces-markdown-widget/",
+      "datePublished": "2026-04-16"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Decap CMS Website Migrated to Hugo",
+      "url": "https://decapcms.org/blog/gatsby-to-hugo-migration/",
+      "datePublished": "2025-10-06"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Introducing Decap CMS",
+      "url": "https://decapcms.org/blog/introducing-decap/",
+      "datePublished": "2023-02-23"
+    }
+  ]
+}
