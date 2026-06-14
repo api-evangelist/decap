@@ -1,90 +1,94 @@
 aid: decap
 name: Decap CMS
-description: >
-  Decap CMS (formerly Netlify CMS) is an open-source, Git-based headless content
-  management system for static site generators and modern frontend frameworks. It
-  provides a web-based editorial UI for managing content stored directly in Git
+description: 'Decap CMS (formerly Netlify CMS) is an open-source, Git-based headless
+  content management system for static site generators and modern frontend frameworks.
+  It provides a web-based editorial UI for managing content stored directly in Git
   repositories, supporting collections of entries and media files, rich-text editing,
-  editorial workflows (draft/review/publish), and i18n. Content operations are
-  proxied to Git hosting backends (GitHub, GitLab, Bitbucket, Azure, Gitea) via
-  their respective REST and GraphQL APIs. Decap Turbo adds a managed cloud layer
-  with a database proxy, centralized authentication, user roles, real-time collaboration
-  presence, and priority support.
+  editorial workflows (draft/review/publish), and i18n. Content operations are proxied
+  to Git hosting backends (GitHub, GitLab, Bitbucket, Azure, Gitea) via their respective
+  REST and GraphQL APIs. Decap Turbo adds a managed cloud layer with a database proxy,
+  centralized authentication, user roles, real-time collaboration presence, and priority
+  support.
+
+  '
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/decap/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
 specificationVersion: '0.19'
 tags:
-  - CMS
-  - Headless CMS
-  - Git-based CMS
-  - Content Management
-  - Static Site Generator
-  - JAMstack
-  - Open Source
-  - Editorial Workflow
+- CMS
+- Headless CMS
+- Git-based CMS
+- Content Management
+- Static Site Generator
+- JAMstack
+- Open Source
+- Editorial Workflow
 apis:
-  - aid: decap:decap-cms-api
-    name: Decap CMS Git Backend API
-    description: >
-      Decap CMS communicates with Git hosting providers (GitHub, GitLab, Bitbucket,
-      Azure, Gitea) through their REST and GraphQL APIs to read, create, update, and
-      delete content entries, manage media file uploads, and orchestrate editorial
-      workflows. The Decap client library wraps these provider APIs; there is no
-      standalone Decap REST API server — all operations pass through the configured
-      backend. Decap Turbo augments this with a database proxy that caches content
-      and reduces direct Git API round-trips for improved performance and reduced
-      rate-limit exposure.
-    humanURL: https://decapcms.org/docs/intro/
-    baseURL: https://api.github.com
-    tags:
-      - Content Management
-      - Git Backend
-      - Editorial Workflow
-      - Media Management
-    properties:
-      - type: Documentation
-        url: https://decapcms.org/docs/intro/
-      - type: BackendsOverview
-        url: https://decapcms.org/docs/backends-overview/
-      - type: GitHubBackend
-        url: https://decapcms.org/docs/github-backend/
-      - type: GitLabBackend
-        url: https://decapcms.org/docs/gitlab-backend/
-      - type: GitGatewayBackend
-        url: https://decapcms.org/docs/git-gateway-backend/
-      - type: Collections
-        url: https://decapcms.org/docs/collection-types/
-      - type: Widgets
-        url: https://decapcms.org/docs/widgets/
-      - type: EditorialWorkflow
-        url: https://decapcms.org/docs/configuration-options/#publish-mode
-      - type: MediaLibrary
-        url: https://decapcms.org/docs/media-library/
-      - type: Authentication
-        url: https://decapcms.org/docs/authentication-backends/
-      - type: ChangeLog
-        url: https://github.com/decaporg/decap-cms/releases
-common:
-  - type: Website
-    url: https://decapcms.org/
+- aid: decap:decap-cms-api
+  name: Decap CMS Git Backend API
+  description: 'Decap CMS communicates with Git hosting providers (GitHub, GitLab,
+    Bitbucket, Azure, Gitea) through their REST and GraphQL APIs to read, create,
+    update, and delete content entries, manage media file uploads, and orchestrate
+    editorial workflows. The Decap client library wraps these provider APIs; there
+    is no standalone Decap REST API server — all operations pass through the configured
+    backend. Decap Turbo augments this with a database proxy that caches content and
+    reduces direct Git API round-trips for improved performance and reduced rate-limit
+    exposure.
+
+    '
+  humanURL: https://decapcms.org/docs/intro/
+  baseURL: https://api.github.com
+  tags:
+  - Content Management
+  - Git Backend
+  - Editorial Workflow
+  - Media Management
+  properties:
   - type: Documentation
-    url: https://decapcms.org/docs/
-  - type: GitHubOrg
-    url: https://github.com/decaporg
-  - type: Blog
-    url: https://decapcms.org/blog/
-  - type: Pricing
-    url: https://decapcms.org/turbo/
-  - type: X
-    url: https://x.com/Decap_CMS
-  - type: Plans
-    url: plans/decap-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/decap-rate-limits.yml
-  - type: FinOps
-    url: finops/decap-finops.yml
+    url: https://decapcms.org/docs/intro/
+  - type: BackendsOverview
+    url: https://decapcms.org/docs/backends-overview/
+  - type: GitHubBackend
+    url: https://decapcms.org/docs/github-backend/
+  - type: GitLabBackend
+    url: https://decapcms.org/docs/gitlab-backend/
+  - type: GitGatewayBackend
+    url: https://decapcms.org/docs/git-gateway-backend/
+  - type: Collections
+    url: https://decapcms.org/docs/collection-types/
+  - type: Widgets
+    url: https://decapcms.org/docs/widgets/
+  - type: EditorialWorkflow
+    url: https://decapcms.org/docs/configuration-options/#publish-mode
+  - type: MediaLibrary
+    url: https://decapcms.org/docs/media-library/
+  - type: Authentication
+    url: https://decapcms.org/docs/authentication-backends/
+  - type: ChangeLog
+    url: https://github.com/decaporg/decap-cms/releases
+  - url: graphql/decap-graphql.md
+    type: GraphQL
+common:
+- type: Website
+  url: https://decapcms.org/
+- type: Documentation
+  url: https://decapcms.org/docs/
+- type: GitHubOrg
+  url: https://github.com/decaporg
+- type: Blog
+  url: https://decapcms.org/blog/
+- type: Pricing
+  url: https://decapcms.org/turbo/
+- type: X
+  url: https://x.com/Decap_CMS
+- type: Plans
+  url: plans/decap-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/decap-rate-limits.yml
+- type: FinOps
+  url: finops/decap-finops.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

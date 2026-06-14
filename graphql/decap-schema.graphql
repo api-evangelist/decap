@@ -1,0 +1,349 @@
+# Decap CMS Conceptual Data Model — GraphQL SDL
+#
+# Decap CMS has no native GraphQL API. This schema documents the core content
+# model as GraphQL types, derived from the official configuration reference and
+# widget documentation at https://decapcms.org/docs/
+#
+# Field names and types reflect the structure of config.yml and the runtime
+# content model used by the CMS editor UI.
+
+type Query {
+  config: Config
+  collection(name: String!): Collection
+  collections: [Collection!]!
+  entry(collection: String!, slug: String!): Entry
+  entries(collection: String!, limit: Int, cursor: String): EntryConnection
+}
+
+# ---------------------------------------------------------------------------
+# Top-level CMS configuration
+# ---------------------------------------------------------------------------
+
+type Config {
+  backend: Backend!
+  mediaFolder: String!
+  publicFolder: String
+  publishMode: PublishMode
+  slug: SlugConfig
+  i18n: I18nConfig
+  siteUrl: String
+  displayUrl: String
+  logo: String
+  locale: String
+  showPreviewLinks: Boolean
+  editorComponents: [String!]
+  collections: [Collection!]!
+}
+
+enum PublishMode {
+  SIMPLE
+  EDITORIAL_WORKFLOW
+}
+
+# ---------------------------------------------------------------------------
+# Backend configuration (Git hosting provider)
+# ---------------------------------------------------------------------------
+
+type Backend {
+  name: BackendName!
+  repo: String
+  branch: String
+  apiRoot: String
+  siteId: String
+  baseUrl: String
+  authEndpoint: String
+  appId: String
+  authType: AuthType
+  identityUrl: String
+  gatewayUrl: String
+  largeMediaUrl: String
+  useGraphql: Boolean
+  proxy: ProxyConfig
+}
+
+enum BackendName {
+  GITHUB
+  GITLAB
+  BITBUCKET
+  AZURE
+  GITEA
+  GIT_GATEWAY
+  PROXY
+  TEST_REPO
+}
+
+enum AuthType {
+  PKCE
+  IMPLICIT
+}
+
+type ProxyConfig {
+  url: String!
+  params: JSON
+}
+
+# ---------------------------------------------------------------------------
+# Collection — a group of content entries
+# ---------------------------------------------------------------------------
+
+type Collection {
+  name: String!
+  label: String
+  labelSingular: String
+  description: String
+  folder: String
+  files: [CollectionFile!]
+  fields: [Field!]
+  sortableFields: [String!]
+  viewFilters: [ViewFilter!]
+  viewGroups: [ViewGroup!]
+  slug: String
+  preview: String
+  create: Boolean
+  delete: Boolean
+  publish: Boolean
+  nested: NestedConfig
+  meta: MetaConfig
+  i18n: I18nConfig
+  mediaFolder: String
+  publicFolder: String
+  path: String
+  summary: String
+  filter: EntryFilter
+  editor: EditorConfig
+  format: ContentFormat
+  frontmatterDelimiter: String
+  yamlQuote: Boolean
+  extension: String
+  type: CollectionType
+}
+
+enum CollectionType {
+  FOLDER
+  FILES
+}
+
+enum ContentFormat {
+  YML
+  YAML
+  TOML
+  JSON
+  FRONTMATTER
+  YAML_FRONTMATTER
+  TOML_FRONTMATTER
+  JSON_FRONTMATTER
+}
+
+type CollectionFile {
+  name: String!
+  label: String
+  file: String!
+  fields: [Field!]!
+  description: String
+  preview: String
+  editor: EditorConfig
+  mediaFolder: String
+  publicFolder: String
+}
+
+type NestedConfig {
+  depth: Int!
+  summary: String
+}
+
+type MetaConfig {
+  path: MetaPathConfig
+}
+
+type MetaPathConfig {
+  label: String
+  widget: String
+  index: String
+}
+
+type EntryFilter {
+  field: String!
+  value: String!
+}
+
+type ViewFilter {
+  label: String!
+  field: String!
+  pattern: String!
+}
+
+type ViewGroup {
+  label: String!
+  field: String!
+  pattern: String
+}
+
+type EditorConfig {
+  preview: Boolean
+}
+
+# ---------------------------------------------------------------------------
+# Entry — a single content item
+# ---------------------------------------------------------------------------
+
+type Entry {
+  id: ID!
+  collection: String!
+  slug: String!
+  path: String!
+  data: JSON!
+  raw: String
+  label: String
+  author: String
+  updatedOn: String
+  createdOn: String
+  status: EntryStatus
+  mediaFiles: [MediaFile!]
+}
+
+type EntryConnection {
+  cursor: String
+  hasMore: Boolean!
+  entries: [Entry!]!
+}
+
+enum EntryStatus {
+  DRAFT
+  PENDING_REVIEW
+  PENDING_PUBLISH
+  PUBLISHED
+}
+
+# ---------------------------------------------------------------------------
+# Field — a content field definition (widget configuration)
+# ---------------------------------------------------------------------------
+
+type Field {
+  name: String!
+  label: String
+  widget: WidgetType!
+  required: Boolean
+  hint: String
+  pattern: [FieldPattern!]
+  i18n: FieldI18n
+  default: JSON
+  comment: String
+  mediaFolder: String
+  publicFolder: String
+  # Widget-specific options serialized as JSON
+  options: JSON
+}
+
+enum WidgetType {
+  STRING
+  TEXT
+  NUMBER
+  BOOLEAN
+  DATETIME
+  IMAGE
+  FILE
+  SELECT
+  MULTISELECT
+  LIST
+  OBJECT
+  MAP
+  MARKDOWN
+  CODE
+  COLOR
+  RELATION
+  HIDDEN
+  UUID
+}
+
+type FieldPattern {
+  pattern: String!
+  message: String!
+}
+
+enum FieldI18n {
+  TRANSLATE
+  DUPLICATE
+  NONE
+}
+
+# ---------------------------------------------------------------------------
+# Slug configuration
+# ---------------------------------------------------------------------------
+
+type SlugConfig {
+  encoding: SlugEncoding
+  clean: Boolean
+  sanitizeReplacement: String
+}
+
+enum SlugEncoding {
+  UNICODE
+  ASCII
+}
+
+# ---------------------------------------------------------------------------
+# Widget — runtime widget descriptor
+# ---------------------------------------------------------------------------
+
+type Widget {
+  name: String!
+  label: String
+  controlComponent: String
+  previewComponent: String
+  schema: JSON
+}
+
+# ---------------------------------------------------------------------------
+# Media
+# ---------------------------------------------------------------------------
+
+type MediaFile {
+  id: ID!
+  name: String!
+  size: Int
+  displayURL: String
+  path: String!
+  draft: Boolean
+  file: String
+  url: String
+  queryOrder: Int
+  isViewableImage: Boolean
+}
+
+type MediaLibraryConfig {
+  name: String
+  config: JSON
+  mediaFolder: String
+  publicFolder: String
+}
+
+# ---------------------------------------------------------------------------
+# i18n
+# ---------------------------------------------------------------------------
+
+type I18nConfig {
+  structure: I18nStructure
+  locales: [String!]
+  defaultLocale: String
+}
+
+enum I18nStructure {
+  MULTIPLE_FOLDERS
+  MULTIPLE_FILES
+  SINGLE_FILE
+}
+
+# ---------------------------------------------------------------------------
+# Preview configuration
+# ---------------------------------------------------------------------------
+
+type PreviewTemplate {
+  name: String!
+  component: String!
+}
+
+# ---------------------------------------------------------------------------
+# Scalar
+# ---------------------------------------------------------------------------
+
+scalar JSON
