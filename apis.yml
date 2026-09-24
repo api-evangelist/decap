@@ -46,7 +46,7 @@ tags:
 - Content Management
 - Static Site Generator
 - JAMstack
-- Open-Source
+- Open Source
 - Editorial Workflow
 tags_raw:
 - CMS
@@ -57,6 +57,7 @@ tags_raw:
 - JAMstack
 - Open Source
 - Editorial Workflow
+- Open-Source
 apis:
 - aid: decap:decap-cms-api
   name: Decap CMS Git Backend API
@@ -100,8 +101,6 @@ apis:
     url: https://decapcms.org/docs/authentication-backends/
   - type: ChangeLog
     url: https://github.com/decaporg/decap-cms/releases
-  - url: graphql/decap-graphql.md
-    type: GraphQL
 common:
 - type: DomainSecurity
   url: security/decap-domain-security.yml
