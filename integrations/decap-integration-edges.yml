@@ -1,0 +1,26 @@
+generated: '2026-10-22'
+method: searched
+checked:
+- netlify/integrations/netlify-integration-edges.yml
+source:
+- netlify/integrations/netlify-integration-edges.yml
+edges:
+- partner_name: Netlify (own)
+  partner: netlify
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.netlify.com/integrations/decap/
+  mirror_of: netlify/integrations/netlify-integration-edges.yml
+  apps:
+  - Decap
+  - Decap Starter Templates
+  listing_count: 1
+  detected: '2026-10-22'
+  detected_by: mirror-platform-listings.py
+  category: Search
+  partner_tier: listing
