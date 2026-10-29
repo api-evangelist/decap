@@ -1,4 +1,4 @@
-# Decap CMS (decap)
+# Decap CMS
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,68 +66,108 @@
 
 Decap CMS (formerly Netlify CMS) is an open-source, Git-based headless content management system for static site generators and modern frontend frameworks. It provides a web-based editorial UI for managing content stored directly in Git repositories, supporting collections of entries and media files, rich-text editing, editorial workflows (draft/review/publish), and i18n. Content operations are proxied to Git hosting backends (GitHub, GitLab, Bitbucket, Azure, Gitea) via their respective REST and GraphQL APIs. Decap Turbo adds a managed cloud layer with a database proxy, centralized authentication, user roles, real-time collaboration presence, and priority support.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/decap/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/decap/refs/heads/main/apis.yml)
+**Areas:** CMS · Headless CMS · Git-based CMS · Content Management · Static Site Generator · JAMstack · Open Source · Editorial Workflow
 
-## Tags
+## Decap CMS on APIs.io
 
-- CMS
-- Headless CMS
-- Git-based CMS
-- Content Management
-- Static Site Generator
-- JAMstack
-- Open Source
-- Editorial Workflow
+Everything profiled for Decap CMS is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/decap/](https://apis.io/providers/decap/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (1)
 
-- **Created:** 2026-06-13
-- **Modified:** 2026-06-13
+- [Decap CMS Git Backend API](https://apis.io/apis/decap/decap-cms-api/) — Decap CMS communicates with Git hosting providers (GitHub, GitLab, Bitbucket, Azure, Gitea) through their REST and GraphQL APIs to read, create, update, and…
 
-## APIs
+### Published properties
 
-### Decap CMS Git Backend API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Decap CMS communicates with Git hosting providers (GitHub, GitLab, Bitbucket, Azure, Gitea) through their REST and GraphQL APIs to read, create, update, and delete content entries, manage media file uploads, and orchestrate editorial workflows. The Decap client library wraps these provider APIs; there is no standalone Decap REST API server — all operations pass through the configured backend. Decap Turbo augments this with a database proxy that caches content and reduces direct Git API round-trips for improved performance and reduced rate-limit exposure.
+#### GraphQL (1)
 
-- **Human URL:** [https://decapcms.org/docs/intro/](https://decapcms.org/docs/intro/)
-- **Base URL:** `https://api.github.com`
+GraphQL schemas.
 
-#### Tags
+- [Moved to /providers/decap/](https://apis.io/graphqls/decap/decap-graphql/)
 
-- Content Management
-- Git Backend
-- Editorial Workflow
-- Media Management
+#### Security (1)
 
-#### Properties
+Authentication, trust centre, and vulnerability disclosure.
 
-- [Documentation](https://decapcms.org/docs/intro/)
-- [Backends Overview](https://decapcms.org/docs/backends-overview/)
-- [Git Hub Backend](https://decapcms.org/docs/github-backend/)
-- [Git Lab Backend](https://decapcms.org/docs/gitlab-backend/)
-- [Git Gateway Backend](https://decapcms.org/docs/git-gateway-backend/)
-- [Collections](https://decapcms.org/docs/collection-types/)
-- [Widgets](https://decapcms.org/docs/widgets/)
-- [Editorial Workflow](https://decapcms.org/docs/configuration-options/#publish-mode)
-- [Media Library](https://decapcms.org/docs/media-library/)
-- [Authentication](https://decapcms.org/docs/authentication-backends/)
-- [Changelog](https://github.com/decaporg/decap-cms/releases)
-- [Graph Q L](graphql/decap-graphql.md)
+- [Decap Domain Security](https://apis.io/security/decap/decap-domain-security/)
 
-## Common Properties
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Decap Plans Pricing](https://apis.io/plans/decap/decap-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Decap Rate Limits](https://apis.io/rate-limits/decap/decap-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Decap Finops](https://apis.io/finops/decap/decap-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://decapcms.org/)
 - [Documentation](https://decapcms.org/docs/)
-- [Git Hub Org](https://github.com/decaporg)
-- [Blog](https://decapcms.org/blog/)
 - [Pricing](https://decapcms.org/turbo/)
-- [X (Twitter)](https://x.com/Decap_CMS)
-- [Plans](plans/decap-plans-pricing.yml)
-- [Rate Limits](rate-limits/decap-rate-limits.yml)
-- [Fin Ops](finops/decap-finops.yml)
+- [Blog](https://decapcms.org/blog/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 17.3** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 21.1 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 18.4 |
+
+**Agent readiness 3.1** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/decap/](https://apis.io/providers/decap/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Decap CMS: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/decap/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
